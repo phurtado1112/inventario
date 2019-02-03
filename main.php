@@ -14,7 +14,7 @@
 	require_once 'menu.php';
 	?>
 <section>
-<h1>Main</h1>
+<h1>Panel de Inicio</h1>
 </section>
 
 <?php

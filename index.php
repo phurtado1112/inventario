@@ -51,7 +51,7 @@
 <body>
 
 <div class="container">
-    <div class="row">
+    <div class="row text-center">
 
         <div class="card">
             <img src="img/puente.jpg" alt="puente">
@@ -68,14 +68,18 @@
                 <div class="form-group col-4 align-content-center">
                     <input type="submit" value="Ingresar" class="btn btn-success">
                 </div>
+<!--                <div class="row text-center">-->
                <?php
-                   if(isset($_SESSION['error'])) {
-                      $error = $_SESSION['error'];
-	                   echo $error;
+                   if(!isset($_POST['usuario'])) {
+	                   if (isset($_SESSION['error'])) {
+		                   $error = $_SESSION['error'];
+		                   echo $error;
 //	                   session_unset();
 //                      session_destroy();
+	                   }
                    }
                    ?>
+<!--                </div>-->
             </form>
         </div>
     </div>

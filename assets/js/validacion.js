@@ -12,7 +12,8 @@ $('#login').validate({
    },
    rules: {
       usuario: {
-         required: true
+         required: true,
+         email: true
       },
       password: {
          required: true,
@@ -20,10 +21,11 @@ $('#login').validate({
    },
    messages: {
       usuario: {
-         required: "El Usuario es obligatorio"
+         required: 'El Usuario es obligatorio',
+         email: 'El usuario debe ser una cuenta de correo'
       },
       password: {
-         required: "La Contraseña es obligatoria"
+         required: 'La Contraseña es obligatoria'
       }
    }
 });
@@ -80,11 +82,34 @@ $('#articulo').validate({
         required: 'El Código es obligatorio'
       },
       nombre: {
-         required: "El Nombre es obligatorio"
+         required: 'El Nombre es obligatorio'
       },
-      edad: {
-         number: "ingrese una edad válida",
-         required: "La edad es obligatoria"
+      tamanio: {
+         number: 'Ingrese un Tamaño válido',
+         required: 'El Tamaño es obligatorio'
+      },
+      fecha_vencimiento: {
+         required: 'La Fecha de Vencimiento es obligatoria'
+      },
+      costo: {
+         required: 'El Costo es obligatorio',
+         number: 'Ingrese un Costo válido'
+      },
+      ganancia: {
+         required: 'La Ganancia es obligatoria',
+         number: true
+      },
+      precio: {
+         required: "El Precio es obligatorio",
+         number: true
+      },
+      cantidad_stock: {
+         required: 'La Cantidad de Stock es obligatoria',
+         number: true
+      },
+      cantidad_bodega: {
+         required: 'La Cantidad en Bodega es obligatoria',
+         number: true
       }
    }
 });

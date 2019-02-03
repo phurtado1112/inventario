@@ -9,8 +9,32 @@
 	if(!isset($_SESSION['usuario'])) {
 	    header('Location: index.php');
     }
+	require_once 'Articulo.php';
 	require_once 'cabecera.php';
 	require_once 'menu.php';
+
+   if(isset($_POST['codigo'])) {
+       $codigo = $_POST['codigo'];
+	   $nombre = $_POST['nombre'];
+	   $categoria = $_POST['categoria'];
+	   $tamanio = $_POST['tamanio'];
+	   $color = $_POST['color'];
+	   $fecha_vencimiento = $_POST['fecha_vencimiento'];
+	   $costo = $_POST['costo'];
+	   $ganancia = $_POST['ganancia'];
+	   $precio = $_POST['precio'];
+	   $cantidad_stock = $_POST['cantidad_stock'];
+	   $cantidad_bodega = $_POST['cantidad_bodega'];
+
+	   $articulo = new Articulo($codigo, $nombre, $categoria, $tamanio, $color, $fecha_vencimiento, $costo, $ganancia,
+          $precio, $cantidad_stock, $cantidad_bodega);
+
+	   $_SESSION['registro'] = ['codigo' => $articulo->getCodigo(), 'nombre' => $articulo->getNombre(), 'categoria' => $articulo->getCategoria(),
+          'tamanio' => $articulo->getTamanio(), 'color' => $articulo->getColor(), 'fecha_vencimiento' => $articulo->getFechaVencimiento(),
+          'costo' => $articulo->getCosto(), 'ganancia' => $articulo->getGanancia(), 'precio' => $articulo->getPrecio(),
+          'cantidad_stock' => $articulo->getCantidadStock(), 'cantidad_bodega' => $articulo->getCantidadBodega()];
+      header('Location:inventario.php');
+   }
 ?>
     <section>
         <div class="container">
@@ -21,7 +45,7 @@
             </div>
             <div class="row">
                 <div class="col-6 offset-3">
-                    <form action="index.php" method="post" autocomplete="off" id="articulo">
+                    <form action="inventario.php" method="post" autocomplete="off" id="articulo">
                         <div class="row"> <!-- PRIMERA LINEA -->
                             <div class="form-group col-6">
                                 <label for="codigo" class="texto_rojo">UPC/EAN/ISBN</label>
