@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: lightgrey;
+}
+
+.card {
+    width: 18rem;
+    margin-top: 7rem;
+    margin-left: 25rem;
+}
+
+.card img {
+    width: 14rem;
+    margin: 1rem 0 1rem 2rem;
+}
+
+section {
+    min-height: 590px;
+    padding-top: 4rem;
+}
+
+footer p {
+    font-weight: bold;
+    color: blue;
+}
+
+.texto_rojo {
+    color: red;
+    font-weight: bold;
+}
